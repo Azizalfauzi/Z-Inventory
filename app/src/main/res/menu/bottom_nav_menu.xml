@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/normal_inventory"
+        android:icon="@drawable/ic_normal_inventory"
+        android:title="@string/t_normal_inventory" />
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_inventory"
+        android:title="@string/t_inventory" />
+
+    <item
+        android:id="@+id/broke_inventory"
+        android:icon="@drawable/ic_broke_invetory"
+        android:title="@string/t_broke_inventory" />
+
+</menu>

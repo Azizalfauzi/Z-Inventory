@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Z-Inventory</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="t_normal_inventory">Normal Inventory</string>
+    <string name="t_inventory">Home Inventory</string>
+    <string name="t_broke_inventory">Broke Inventory</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="t_home1">Lihat</string>
+    <string name="t_home2">Data</string>
+    <string name="t_home3">Barang</string>
+    <string name="t_home4">Z-</string>
+    <string name="t_home5">Inventory</string>
+    <string name="t_home6">Aplikasi</string>
+    <string name="t_home7">Aplikasi</string>
+    <string name="t_home8">Inventaris</string>
+    <string name="t_home9">Barang</string>
+    <string name="t_home10">Normal Inventory</string>
+    <string name="t_home11">Broke Inventory</string>
+    <string name="Buku">buku</string>
+    <string name="t_seedetail">See Detail</string>
+    <string name="t_normal1">Normal</string>
+    <string name="t_normal2">Inventory</string>
+    <string name="jumlah">jumlah</string>
+    <string name="t_broke1">Broke</string>
+    <string name="t_broke2">Inventory</string>
+    <string name="t_detail_broke1">Nama Barang :</string>
+    <string name="t_detail_broke2">Harga Barang :</string>
+    <string name="t_detail_broke3">Jumlah Barang :</string>
+    <string name="t_detail_broke4">Kondisi Barang :</string>
+    <string name="t_detail_broke5">Meja</string>
+    <string name="t_detail_broke6">Rp.3.500.000</string>
+    <string name="t_detail_broke7">20 (Buah)</string>
+    <string name="t_detail_broke9">Terbakar</string>
+    <string name="t_splash1">Z-</string>
+    <string name="t_splash2">Inventory</string>
+</resources>

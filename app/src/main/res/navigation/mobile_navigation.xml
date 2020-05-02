@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="org.d3if0067.z_inventory.ui.home.HomeFragment"
+        android:label="Z-Inventory"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_broke_inventory"
+            app:destination="@id/broke_inventory" />
+        <action
+            android:id="@+id/action_navigation_home_to_normalInventory"
+            app:destination="@id/normal_inventory" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/broke_inventory"
+        android:name="org.d3if0067.z_inventory.ui.brokeinventory.BrokeInventory"
+        android:label="Broke Inventory"
+        tools:layout="@layout/fragment_broke_inventory">
+        <action
+            android:id="@+id/action_broke_inventory_to_detailBrokeFragment"
+            app:destination="@id/detailBrokeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/normal_inventory"
+        android:name="org.d3if0067.z_inventory.ui.normalinventory.NormalInventory"
+        android:label="Normal Inventory"
+        tools:layout="@layout/fragment_normal_inventory">
+        <action
+            android:id="@+id/action_normal_inventory_to_detailNormalFragment"
+            app:destination="@id/detailNormalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailNormalFragment"
+        android:name="org.d3if0067.z_inventory.ui.detailnormal.DetailNormalFragment"
+        android:label="Detail Z-Inventory"
+        tools:layout="@layout/fragment_detail_normal" >
+        <action
+            android:id="@+id/action_detailNormalFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailBrokeFragment"
+        android:name="org.d3if0067.z_inventory.ui.detailbroke.DetailBrokeFragment"
+        android:label="Detail Z-Inventory"
+        tools:layout="@layout/fragment_detail_broke">
+        <action
+            android:id="@+id/action_detailBrokeFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+</navigation>
