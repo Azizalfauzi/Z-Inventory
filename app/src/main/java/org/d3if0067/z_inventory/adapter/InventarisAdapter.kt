@@ -4,9 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.recylerview_normal_inventory.view.*
 import org.d3if0067.z_inventory.R
-import org.d3if0067.z_inventory.database.Inventaris
+import org.d3if0067.z_inventory.model.Inventaris
 import org.d3if0067.z_inventory.databinding.RecylerviewNormalInventoryBinding
 
 class InventarisAdapter(

@@ -9,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 
 import org.d3if0067.z_inventory.R
-import org.d3if0067.z_inventory.database.Inventaris
 import org.d3if0067.z_inventory.databinding.FragmentDetailNormalBinding
 
 /**

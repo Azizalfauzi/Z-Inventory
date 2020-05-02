@@ -2,7 +2,8 @@ package org.d3if0067.z_inventory.network
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import org.d3if0067.z_inventory.database.Inventaris
+import org.d3if0067.z_inventory.model.Inventaris
+import org.d3if0067.z_inventory.model2.Inventaris2
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -31,7 +32,7 @@ interface ApiService {
 }
 interface ApiService2 {
     @GET(BASE_GET2)
-    suspend fun showList(): List<Inventaris>
+    suspend fun showList(): List<Inventaris2>
 }
 
 object ApiInventaris {

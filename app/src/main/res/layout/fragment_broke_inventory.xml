@@ -9,7 +9,7 @@
         tools:context=".ui.brokeinventory.BrokeInventory">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_normal_inventory"
+            android:id="@+id/rv_broke_inventory"
             android:layout_width="409dp"
             android:layout_height="553dp"
             android:layout_marginStart="1dp"
