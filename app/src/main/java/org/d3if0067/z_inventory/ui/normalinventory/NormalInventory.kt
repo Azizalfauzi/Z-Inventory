@@ -15,15 +15,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 import org.d3if0067.z_inventory.R
 import org.d3if0067.z_inventory.adapter.InventarisAdapter
-import org.d3if0067.z_inventory.adapter.RecylerViewClickListener
+import org.d3if0067.z_inventory.utils.RecylerViewClickListener
 import org.d3if0067.z_inventory.model.Inventaris
 import org.d3if0067.z_inventory.databinding.FragmentNormalInventoryBinding
+
 
 /**
  * A simple [Fragment] subclass.
  */
 @Suppress("SpellCheckingInspection")
-class NormalInventory : Fragment(), RecylerViewClickListener {
+class NormalInventory : Fragment(),
+    RecylerViewClickListener {
     private lateinit var binding: FragmentNormalInventoryBinding
     private lateinit var viewModel: NormalViewModel
     override fun onCreateView(
@@ -39,6 +41,8 @@ class NormalInventory : Fragment(), RecylerViewClickListener {
         val factory = NormalViewModel.Factory(application)
         viewModel = ViewModelProvider(this, factory).get(NormalViewModel::class.java)
 
+        binding.inventarisVm = viewModel
+        binding.lifecycleOwner = this
 
         viewModel.inventaris.observe(viewLifecycleOwner, Observer {
             val datafix = it.distinctBy { inventaris -> inventaris.namaBarang }
@@ -49,16 +53,6 @@ class NormalInventory : Fragment(), RecylerViewClickListener {
 
             adapter.listener = this
         })
-//        viewModel.data.observe({ lifecycle }, {
-//            val inventarisAdapter = InventarisAdapter(it)
-//            val recyclerView = binding.rvNormalInventory
-//
-//            inventarisAdapter.listener = this
-//            recyclerView.apply {
-//                this.adapter = inventarisAdapter
-//                this.layoutManager = LinearLayoutManager(requireContext())
-//            }
-//        })
         viewModel.response.observe({ lifecycle }, {
             if (it.isNotEmpty()) {
                 Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()

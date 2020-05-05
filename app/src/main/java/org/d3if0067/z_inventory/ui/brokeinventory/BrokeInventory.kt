@@ -14,19 +14,16 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import org.d3if0067.z_inventory.R
-import org.d3if0067.z_inventory.adapter.InventarisAdapter
 import org.d3if0067.z_inventory.adapter.InventarisAdapterBroke
-import org.d3if0067.z_inventory.adapter.RecylerViewClickListener
-import org.d3if0067.z_inventory.adapter.RecylerViewClickListener2
-import org.d3if0067.z_inventory.model.Inventaris
+import org.d3if0067.z_inventory.utils.RecylerViewClickListener2
 import org.d3if0067.z_inventory.databinding.FragmentBrokeInventoryBinding
 import org.d3if0067.z_inventory.model2.Inventaris2
-import org.d3if0067.z_inventory.ui.normalinventory.NormalViewModel
 
 /**
  * A simple [Fragment] subclass.
  */
-class BrokeInventory : Fragment(), RecylerViewClickListener2 {
+class BrokeInventory : Fragment(),
+    RecylerViewClickListener2 {
     private lateinit var binding: FragmentBrokeInventoryBinding
     private lateinit var viewModel: BrokeViewModel
     override fun onCreateView(
@@ -41,7 +38,8 @@ class BrokeInventory : Fragment(), RecylerViewClickListener2 {
         val factory = BrokeViewModel.Factory(application)
         viewModel = ViewModelProvider(this, factory).get(BrokeViewModel::class.java)
 
-
+        binding.inventarisBroke = viewModel
+        binding.lifecycleOwner = this
 
         viewModel.inventaris2.observe(viewLifecycleOwner, Observer {
             val datafix = it.distinctBy { inventaris2 -> inventaris2.namaBarang }
@@ -52,17 +50,6 @@ class BrokeInventory : Fragment(), RecylerViewClickListener2 {
 
             adapter.listener = this
         })
-
-//        viewModel.data.observe({ lifecycle }, {
-//            val inventarisAdapter = InventarisAdapter(it)
-//            val recyclerView = binding.rvNormalInventory
-//
-//            inventarisAdapter.listener = this
-//            recyclerView.apply {
-//                this.adapter = inventarisAdapter
-//                this.layoutManager = LinearLayoutManager(requireContext())
-//            }
-//        })
         viewModel.response.observe({ lifecycle }, {
             if (it.isNotEmpty()) {
                 Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()

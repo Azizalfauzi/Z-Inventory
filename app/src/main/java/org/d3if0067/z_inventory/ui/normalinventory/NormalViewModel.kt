@@ -16,9 +16,10 @@ import org.d3if0067.z_inventory.network.ApiInventaris
 import org.d3if0067.z_inventory.repository.InventarisRepository
 
 class NormalViewModel(application: Application) : ViewModel() {
-    private val _data = MutableLiveData<List<Inventaris>>()
-    val data: LiveData<List<Inventaris>>
-        get() = _data
+
+    private val _loading = MutableLiveData<Boolean>()
+    val loading: LiveData<Boolean>
+        get() = _loading
 
     private val _response = MutableLiveData<String>()
     val response: LiveData<String>
@@ -33,32 +34,19 @@ class NormalViewModel(application: Application) : ViewModel() {
 
     init {
         _response.value = ""
+        _loading.value = true
         uiScope.launch {
             try {
                 inventarisRepository.refreshInventaris()
-                _response.value ="Berhasil ambil data dari room"
+                _response.value = "Berhasil ambil data dari room"
             } catch (t: Throwable) {
                 _response.value = "Tidak ada koneksi internet!"
+            } finally {
+                _loading.value = false
             }
         }
-//        initData()
     }
 
-    //    fun initData(){
-//        uiScope.launch {
-//            try {
-//                val result = ApiInventaris.retrofitService.showList()
-//                if (result.isNotEmpty()){
-//                    _data.value =result
-//                    _response.value ="Data Berhasil DiAmbil"
-//                }else{
-//                    _response.value ="Data Inventaris Kosong"
-//                }
-//            }catch (t:Throwable){
-//                _response.value="Tidak ada koneksi Internet"
-//            }
-//        }
-//    }
     val inventaris = inventarisRepository.inventaris
 
     override fun onCleared() {

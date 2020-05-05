@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import org.d3if0067.z_inventory.R
 import org.d3if0067.z_inventory.model.Inventaris
 import org.d3if0067.z_inventory.databinding.RecylerviewNormalInventoryBinding
+import org.d3if0067.z_inventory.utils.RecylerViewClickListener
 
 class InventarisAdapter(
     private val inventaris: List<Inventaris>

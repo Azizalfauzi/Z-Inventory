@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import org.d3if0067.z_inventory.R
 import org.d3if0067.z_inventory.databinding.RecylerviewBrokeInventoryBinding
 import org.d3if0067.z_inventory.model2.Inventaris2
+import org.d3if0067.z_inventory.utils.RecylerViewClickListener2
 
 @Suppress("SpellCheckingInspection")
 class InventarisAdapterBroke(
